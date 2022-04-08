@@ -1,4 +1,4 @@
-package com.example.navigation;
+package com.example.Navigation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link com.example.navigation.SearchFragment#newInstance} factory method to
+ * Use the {@link com.example.Navigation.SearchFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class SearchFragment extends Fragment {
@@ -36,8 +36,8 @@ public class SearchFragment extends Fragment {
      * @return A new instance of fragment SearchkFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static com.example.navigation.SearchFragment newInstance(String param1, String param2) {
-        com.example.navigation.SearchFragment fragment = new com.example.navigation.SearchFragment();
+    public static com.example.Navigation.SearchFragment newInstance(String param1, String param2) {
+        com.example.Navigation.SearchFragment fragment = new com.example.Navigation.SearchFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

@@ -1,4 +1,4 @@
-package com.example.navigation;
+package com.example.Navigation;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,9 +31,9 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng Kakamega= new LatLng(0.28963, 34.76066);
+            googleMap.addMarker(new MarkerOptions().position(Kakamega).title("Marker in Kakamega"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kakamega, 20.0f));
         }
     };
 

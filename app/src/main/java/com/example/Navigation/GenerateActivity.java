@@ -1,10 +1,9 @@
-package com.example.navigation;
+package com.example.Navigation;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -12,21 +11,18 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.zxing.WriterException;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
 public class GenerateActivity extends AppCompatActivity {
-
-        private TextView back;
 
         private TextView tvYour;
         private ImageView imageView;
@@ -46,17 +42,7 @@ public class GenerateActivity extends AppCompatActivity {
             imageView = findViewById(R.id.image_view);
             btnGen = findViewById(R.id.btn_gen);
             tiEd = findViewById(R.id.ti_ed);
-            back = findViewById(R.id.back);
-
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Fragment fragment = new EntranceFragment();
-                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.gencontain, fragment).commit();
-                }
-            });
+            
 
             btnGen.setOnClickListener(new View.OnClickListener() {
                 @Override

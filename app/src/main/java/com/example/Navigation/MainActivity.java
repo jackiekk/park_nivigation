@@ -1,4 +1,4 @@
-package com.example.navigation;
+package com.example.Navigation;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         edSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(com.example.navigation.MainActivity.this, SignupActivity.class));
+                startActivity(new Intent(com.example.Navigation.MainActivity.this, SignupActivity.class));
             }
         });
 
@@ -94,11 +94,11 @@ public class MainActivity extends AppCompatActivity {
                     {
                         progressDialog.dismiss();
                         sendUserToNextActivity();
-                        Toast.makeText(com.example.navigation.MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(com.example.Navigation.MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     }else
                     {
                         progressDialog.dismiss();
-                        Toast.makeText(com.example.navigation.MainActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(com.example.Navigation.MainActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent=new Intent(com.example.navigation.MainActivity.this, NavigationActivity.class);
+        Intent intent=new Intent(com.example.Navigation.MainActivity.this, NavigationActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

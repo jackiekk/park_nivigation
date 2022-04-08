@@ -1,23 +1,26 @@
-package com.example.navigation;
+package com.example.Navigation;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Menu;
 
-import com.example.navigation.databinding.ActivityNavigationBinding;
+import com.example.Navigation.databinding.ActivityNavigationBinding;
 
-public class NavigationActivity extends AppCompatActivity {
 
-    ActivityNavigationBinding binding;
+public class NavigationActivity extends DrawerBaseActivity {
+
+   ActivityNavigationBinding binding;
+   Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityNavigationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        allocateActivityTitle("Dashboard");
         replaceFragment(new MapsFragment());
 
 
@@ -30,11 +33,10 @@ public class NavigationActivity extends AppCompatActivity {
                 case R.id.entrance:
                     replaceFragment(new EntranceFragment());
                     break;
-                case R.id.app_bar_search:
-                    replaceFragment(new SearchFragment());
-                    break;
                 case R.id.exit:
                     replaceFragment(new ExitFragment());
+                    break;
+                case R.id.more:
                     break;
             }
             return true;

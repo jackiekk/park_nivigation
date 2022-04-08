@@ -25,6 +25,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Full Name"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         android:inputType="textPersonName" />
 
     <EditText
@@ -34,7 +35,18 @@
         android:ems="10"
         android:layout_marginTop="20dp"
         android:hint="Email Address"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:drawableStart="@drawable/ic_baseline_email_24"/>
+
+    <EditText
+        android:id="@+id/ed_plateno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Vehicle Plate Number"
+        android:drawableStart="@drawable/ic_baseline_directions_car_24"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/ed_pasword"
@@ -43,7 +55,8 @@
         android:ems="10"
         android:layout_marginTop="20dp"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_baseline_lock_24"/>
 
     <EditText
         android:id="@+id/ed_cpassword"
@@ -52,7 +65,8 @@
         android:ems="10"
         android:layout_marginTop="20dp"
         android:hint="Confirm Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_baseline_lock_24"/>
 
     <Button
         android:id="@+id/btn_register"
@@ -69,7 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="70dp"
         android:textSize="15dp"
-        android:text="Have Account? LOGIN " />
+        android:text="Already have Account? LOGIN " />
 </LinearLayout>

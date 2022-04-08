@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExitFragment">
+    android:orientation="vertical"
+    tools:context=".ExitFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-
-        android:layout_width="wrap_content"
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="Exit"
-        android:textSize="26dp" />
+        android:textAlignment="center"
+        android:layout_marginTop="60dp"
+        android:textSize="30dp"
+        android:textColor="@color/black"/>
 
-</FrameLayout>
+    <Spinner
+        android:id="@+id/sp_plateno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <Button
+        android:id="@+id/btn_timeout"
+        android:layout_width="127dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/browser_actions_bg_grey"
+        android:text="Get the Time Out"
+        android:textAllCaps="false" />
+
+    <EditText
+        android:id="@+id/tv_timeout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Date and Time displayed here"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:id="@+id/btn_submit1"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textSize="24dp" />
+
+</LinearLayout>
