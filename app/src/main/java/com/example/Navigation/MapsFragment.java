@@ -16,9 +16,21 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 public class MapsFragment extends Fragment {
 
+    ArrayList<LatLng>arrayList = new ArrayList<LatLng>();
+    LatLng Kakamega = new LatLng(0.28963, 34.76066);
+    LatLng LBB = new LatLng(0.288576, 34.765851);
+    LatLng ECA = new LatLng(0.290687, 34.765907);
+    LatLng Library = new LatLng(0.289682, 34.763982);
+    LatLng SPD = new LatLng(0.287793, 34.765393);
+
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
+
+
 
         /**
          * Manipulates the map once available.
@@ -31,9 +43,18 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng Kakamega= new LatLng(0.28963, 34.76066);
-            googleMap.addMarker(new MarkerOptions().position(Kakamega).title("Marker in Kakamega"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kakamega, 20.0f));
+
+            for (int i=0; i<arrayList.size();i++){
+                googleMap.addMarker(new MarkerOptions().position(arrayList.get(0)).title("LBB Car park"));
+                googleMap.addMarker(new MarkerOptions().position(arrayList.get(1)).title("ECA Car park"));
+                googleMap.addMarker(new MarkerOptions().position(arrayList.get(2)).title("Library Car park"));
+                googleMap.addMarker(new MarkerOptions().position(arrayList.get(3)).title("SPD Car park"));
+                //googleMap.animateCamera(CameraUpdateFactory.zoomTo(20.0f));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Kakamega,15.0f));
+            }
+
+            //googleMap.addMarker(new MarkerOptions().position(Kakamega).title("Marker in Kakamega"));
+            //
         }
     };
 
@@ -52,6 +73,11 @@ public class MapsFragment extends Fragment {
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
+
+            arrayList.add(LBB);
+            arrayList.add(ECA);
+            arrayList.add(Library);
+            arrayList.add(SPD);
         }
     }
 }
