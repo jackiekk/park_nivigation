@@ -30,6 +30,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText edEmailAddress;
     private EditText edPlateno;
     private EditText edPassword;
+    private EditText edPhone;
     private EditText edConfirmPassword;
     private Button btnRegister;
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -54,6 +55,7 @@ public class SignupActivity extends AppCompatActivity {
         edEmailAddress = findViewById(R.id.ed_address);
         edPlateno = findViewById(R.id.ed_plateno);
         edPassword = findViewById(R.id.ed_pasword);
+        edPhone = findViewById(R.id.ed_phone);
         edConfirmPassword = findViewById(R.id.ed_cpassword);
         btnRegister = findViewById(R.id.btn_register);
         tvAccount = findViewById(R.id.tv_account);
@@ -86,8 +88,9 @@ public class SignupActivity extends AppCompatActivity {
         String FullName = edFullName.getText().toString();
         String EmailAddress = edEmailAddress.getText().toString();
         String Plateno = edPlateno.getText().toString();
+        String Phone = edPhone.getText().toString();
 
-        User user = new User(FullName, Plateno, EmailAddress);
+        User user = new User(FullName, EmailAddress, Plateno, Phone);
 
         userDbRef.push().setValue(user);
     }
@@ -96,6 +99,7 @@ public class SignupActivity extends AppCompatActivity {
         String strFullName = edFullName.getText().toString();
         String strPlateno = edPlateno.getText().toString();
         String strEmailAddress = edEmailAddress.getText().toString();
+        String strPhone = edPhone.getText().toString();
         String strPassword = edPassword.getText().toString();
         String strConfirmPassword = edConfirmPassword.getText().toString();
 
@@ -105,7 +109,11 @@ public class SignupActivity extends AppCompatActivity {
 
         }else if (!strEmailAddress.matches(emailpattern))
         {
-            edEmailAddress.setError("Enter Correct Email");
+            edEmailAddress.setError("Enter correct Email format");
+
+        }else if (strPhone.isEmpty())
+        {
+            edPhone.setError("Enter Your Phone number");
 
         }else if (strPlateno.isEmpty())
         {

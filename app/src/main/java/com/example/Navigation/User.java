@@ -1,14 +1,19 @@
 package com.example.Navigation;
 
 public class User {
-    String FullName;
-    String EmailAddress;
-    String Plateno;
+    public String FullName;
+    public String EmailAddress;
+    public String Plateno;
+    public String Phone;
 
-    public User(String FullName, String EmailAddress, String Plateno){
+    public User(String FullName, String EmailAddress, String Plateno, String Phone){
         this.FullName = FullName;
         this.EmailAddress= EmailAddress;
         this.Plateno = Plateno;
+        this.Phone = Phone;
+    }
+    public User(){
+
     }
 
     public String getFullName() {
@@ -33,6 +38,14 @@ public class User {
 
     public void setPlateno(String plateno) {
         Plateno = plateno;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
     }
 
 }

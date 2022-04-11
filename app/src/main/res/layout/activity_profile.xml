@@ -23,39 +23,46 @@
         android:textSize="20dp"
         android:textAlignment="center"
         android:textStyle="italic"/>
-    <EditText
+    <TextView
         android:id="@+id/p_fullname"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:hint="FullName"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         android:layout_marginRight="20dp"/>
-    <EditText
-        android:id="@+id/p_plateno"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="25dp"
-        android:hint="Vehicle Plate no"
-        android:layout_marginRight="20dp"/>
-    <EditText
+
+    <TextView
         android:id="@+id/p_emailAddress"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:hint="Email Address"
-        android:layout_marginRight="20dp"/>/>
-    <Button
-        android:id="@+id/btn_profile"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="30dp"
-        android:text="Save"
-        android:textAllCaps="false"
-        android:background="@drawable/button"/>
+        android:layout_marginRight="20dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"/>
 
+    <TextView
+        android:id="@+id/p_phone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:hint="Phone Number"
+        android:drawableStart="@drawable/ic_baseline_phone_24"
+        android:layout_marginRight="20dp"/>
 
+    <TextView
+        android:id="@+id/p_plateno"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:hint="Vehicle Plate no"
+        android:drawableStart="@drawable/ic_baseline_directions_car_24"
+        android:layout_marginRight="20dp"/>
 </LinearLayout>
+
+
+

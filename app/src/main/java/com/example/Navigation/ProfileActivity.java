@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.Navigation.databinding.ActivityHistoryBinding;
 import com.example.Navigation.databinding.ActivityProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,16 +25,19 @@ public class ProfileActivity extends DrawerBaseActivity {
     ActivityProfileBinding binding;
 
     ImageView pImagev;
-    EditText pFullname;
-    EditText pEmailAddress;
-    EditText pPlateno;
-    Button btnProfile;
+    private TextView pFullname;
+    private TextView pEmailAddress;
+    private TextView pPlateno;
+    private TextView pPhone;
+    //Button btnProfile;
     User user;
-    String Fullname, EmailAddress, Plateno, uid;
+    DatabaseReference databaseReference;
+    FirebaseAuth mAuth;
+    FirebaseDatabase firebaseDatabase;
+    String uid;
 
-    FirebaseDatabase database;
-    FirebaseAuth fAuth;
-    DatabaseReference Dref;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,35 +46,41 @@ public class ProfileActivity extends DrawerBaseActivity {
         setContentView(binding.getRoot());
         allocateActivityTitle("Profile");
 
-        btnProfile = findViewById(R.id.btn_profile);
+        //btnProfile = findViewById(R.id.btn_profile);
         pFullname = findViewById(R.id.p_fullname);
         pEmailAddress = findViewById(R.id.p_emailAddress);
         pPlateno = findViewById(R.id.p_plateno);
+        pPhone = findViewById(R.id.p_phone);
 
-        fAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
-        uid = fAuth.getCurrentUser().getUid().toString();
+        firebaseDatabase =  FirebaseDatabase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        uid = mAuth.getCurrentUser().getUid();
+         //databaseReference = mAuth.getRegetUid();
 
-        Dref = database.getReference().child("Users");
+
+
         if (!uid.isEmpty()) {
 
-            getUserdata();
+            getUserdata(uid);
         }
 
     }
 
-    private void getUserdata() {
-        Dref.child(uid).addValueEventListener(new ValueEventListener() {
+    private void getUserdata(String uid) {
+        DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        DatabaseReference currentUser = usersRef.child(uid);
+        currentUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount() > 0)
+                for ( DataSnapshot postSnapshot : snapshot.getChildren())
                 {
-                    user = snapshot.getValue(User.class);
-                    binding.pFullname.setText(user.FullName);
-                    binding.pEmailAddress.setText(user.EmailAddress);
-                    binding.pPlateno.setText(user.Plateno);
-                    
-                    /*String FullName = snapshot.child("fullName").getValue().toString();
+                    user = postSnapshot.getValue(User.class);
+                    pFullname.setText(user.getFullName());
+                    pEmailAddress.setText(user.getEmailAddress());
+                    pPlateno.setText(user.getPlateno());
+                    pPhone.setText(user.getPhone());
+
+                     /*Fullname = snapshot.child("fullName").getValue().toString();
                     String EmailAddress = snapshot.child("emailAddress").getValue().toString();
                     String Plateno = snapshot.child("plateno").getValue().toString();*/
 
@@ -79,6 +91,7 @@ public class ProfileActivity extends DrawerBaseActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(com.example.Navigation.ProfileActivity.this, " Failed to read", Toast.LENGTH_SHORT).show();
 
             }
         });

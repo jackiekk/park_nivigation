@@ -6,6 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
 android:padding="30dp"
+    android:background="@drawable/login"
 tools:context=".MainActivity">
 
 
@@ -13,7 +14,7 @@ tools:context=".MainActivity">
     android:id="@+id/tv_signin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="80dp"
+    android:layout_marginTop="100dp"
     android:text="LOGIN"
     android:textAlignment="center"
     android:textColor="@color/black"
@@ -23,7 +24,7 @@ tools:context=".MainActivity">
     android:id="@+id/ed_email"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="105dp"
     android:ems="10"
     android:hint="Email Address"
     android:drawableStart="@drawable/ic_baseline_email_24"
@@ -43,16 +44,16 @@ tools:context=".MainActivity">
     android:inputType="textPassword" />
 
 
-<TextView
-    android:id="@+id/ed_forgot"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_marginLeft="200dp"
-    android:textSize="10dp"
-    android:text="Forgot Your Password?" />
+    <TextView
+        android:id="@+id/ed_forgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="20dp"
+        android:text="Forgot Your Password?"
+        android:textSize="12dp" />
 
-<Button
+    <Button
     android:id="@+id/btn_login"
     android:layout_width="250dp"
     android:layout_height="wrap_content"

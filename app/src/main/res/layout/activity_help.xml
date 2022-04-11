@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/holo_blue_dark"
+    android:padding="20dp"
     tools:context=".HelpActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/hp_help"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="How to navigate through the App"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/hp_Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Sign up and Login using Email address and Password"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/hp_Entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Entry"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/hp_Etwords"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="5dp"
+        android:text="At entry tab choose your Occupation, Parking Area, Your car plate Number and time in upon arrival at the Entry gate and submit. Qr code will be generated and scanned for passage upon entrance."
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/hp_Map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Map"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/hp_Mwords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Choose a parking area of your choice on the displayed map, click the direction tab, select your Current Location, you will be directed to that specific Parking Area."
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/hp_Exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Exit"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/hp_Exwords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="At exit tab choose Your car plate Number and time out upon arrival at the Exit gate and submit. Qr code will be generated and scanned for passage at the Exit gate."
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:textSize="16dp" />
+
+</LinearLayout>

@@ -13,7 +13,7 @@ public class AddvehicleActivity extends DrawerBaseActivity {
             super.onCreate(savedInstanceState);
             binding = ActivityAddvehicleBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
-            allocateActivityTitle("Add Vehicle");
+            allocateActivityTitle("My Vehicle");
 
     }
 }
